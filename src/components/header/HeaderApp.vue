@@ -3,7 +3,8 @@
     <nav class="flex items-center justify-between p-6 mx-auto max-w-7xl" aria-label="Global">
       <div class="flex lg:flex-1">
         <a href="" class="-m-1.5 p-1.5 flex items-center">
-          <h2 class="text-3xl font-bold tracking-tight text-gray-900 truncate">ShopeeMe</h2>
+          <img class="flex sm:hidden" width="42" height="42" src="@/assets/logo.png" />
+          <h2 class="hidden text-3xl font-bold tracking-tight text-gray-900 truncate sm:flex">ShopeeMe</h2>
         </a>
       </div>
       <div class="flex lg:hidden">
@@ -62,6 +63,12 @@ const mobileMenuOpen = ref(false)
 const navigation = [
   {
     id: 1,
+    name: 'Home',
+    href: '/',
+    current: true,
+  },
+  {
+    id: 2,
     name: 'Listas',
     href: '/',
     current: true,
