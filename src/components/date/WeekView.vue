@@ -1,19 +1,19 @@
 <template>
-    <section class="border-b">
-        <h1 class="text-xl text-center  font-bold">
+    <div>
+        <h1 class="text-xl font-bold text-center">
             Semana {{ weekNumber }} del año
         </h1>
         <div class="flex items-center">
-            <div v-for="dateItem in dateItems" :key="dateItem.id" class="w-1/2 p-5 flex flex-col sm:flex-row items-center justify-center">
+            <div v-for="dateItem in dateItems" :key="dateItem.id" class="flex flex-col items-center justify-center w-1/2 p-5 sm:flex-row">
                 <span class="mr-3 font-medium">
                     {{ dateItem.prefix }}
                 </span>
-                <span class="border border-gray-300 rounded p-1 px-3 bg-white/80 text-xl">
+                <span class="p-1 px-3 text-xl border border-gray-300 rounded bg-white/80">
                     {{ dateItem.date }} 
                 </span>
             </div>
         </div>
-    </section>
+    </div>
 </template>
 
 <script setup>
