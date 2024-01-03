@@ -3,10 +3,10 @@
         <ul v-if="!editable" role="list" class="divide-y divide-gray-500/10">
             <li v-for="item in list" :key="item.id" class="flex items-center justify-between rounded gap-x-6 bg-gray">
                 <div class="flex flex-row items-center w-full px-5 py-3 hover:cursor-pointer" @click="markItemAsDone(item.id)">
-                    <button :class="['w-6 h-6 mr-5 bg-white rounded-3xl', { 'bg-green-400': item.done }]">
+                    <button :class="['w-6 h-6 mr-5 rounded-3xl', item.done ? 'bg-green-500' : 'bg-white']">
                         <CheckCircleIcon v-if="item.done" class="w-6 font-bold text-white" />
                     </button>
-                    <p :class="['text-xl font-semibold leading-6 text-gray-800', { 'line-through text-gray-400/40': item.done }]">
+                    <p :class="['text-xl font-semibold leading-6', item.done ? 'line-through text-gray-500/40': 'text-gray-800']">
                         {{ item.name }}
                     </p>
                 </div>

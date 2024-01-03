@@ -1,5 +1,5 @@
 <template>
-    <div :class="['absolute top-0 left-0 w-screen flex h-screen bg-gray-500/50 my-auto', { hidden: !open }]">
+    <div :class="['absolute top-0 left-0 w-screen h-screen bg-gray-500/50 my-auto', open ? 'flex' : 'hidden']">
         <div class="max-w-md m-auto border rounded-lg w-80">
             <div class="flex flex-col p-5 bg-white rounded-lg shadow">
                 <div class="flex">

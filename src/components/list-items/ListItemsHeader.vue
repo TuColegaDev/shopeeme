@@ -8,13 +8,13 @@
         </div>
         <div class="hidden lg:flex">
             <ul class="flex flex-row gap-6">
-                <li @click="toggleEditable" :disabled="disabled" :class="['cursor-pointer inline-flex items-center px-4 py-2', { 'hover:text-blue-600': !disabled, 'text-gray-400  cursor-not-allowed': disabled }]">
+                <li @click="toggleEditable" :disabled="disabled" :class="['cursor-pointer inline-flex items-center px-4 py-2', disabled ? 'text-gray-400  cursor-not-allowed': 'hover:text-blue-600']">
                     <PencilSquareIcon class="w-5 mr-3" />
                     <span v-if="!editable">Editar lista</span>
                     <span v-else>Finalizar edición</span>
                 </li>
                 <li @click="openClearListModal" :disabled="disabled"
-                    :class="['cursor-pointer inline-flex items-center px-4 py-2', { 'hover:text-blue-600': !disabled, 'text-gray-400  cursor-not-allowed': disabled }]">
+                    :class="['cursor-pointer inline-flex items-center px-4 py-2', disabled ? 'text-gray-400  cursor-not-allowed': 'hover:text-blue-600']">
                     <ShoppingCartIcon class="w-5 mr-3" />
                     <span class="">Vaciar lista</span>
                 </li>
@@ -32,13 +32,13 @@
         @click="actionsMenuOpen = false">
         <div class="absolute w-auto px-2 bg-white rounded-lg right-10 top-32 lg:hidden">
             <ul class="flex flex-col divide-y divide-gray-500/10">
-                <li @click="toggleEditable" :disabled="disabled" :class="['cursor-pointer inline-flex items-center px-4 py-2', { 'hover:text-blue-600': !disabled, 'text-gray-400  cursor-not-allowed': disabled }]">
+                <li @click="toggleEditable" :disabled="disabled" :class="['cursor-pointer inline-flex items-center px-4 py-2', disabled ? 'text-gray-400  cursor-not-allowed': 'hover:text-blue-600']">
                     <PencilSquareIcon class="w-5 mr-3" />
                     <span v-if="!editable">Editar lista</span>
                     <span v-else>Finalizar edición</span>
                 </li>
                 <li @click="openClearListModal" :disabled="disabled"
-                    :class="['cursor-pointer inline-flex items-center px-4 py-2', { 'hover:text-blue-600': !disabled, 'text-gray-400  cursor-not-allowed': disabled }]">
+                    :class="['cursor-pointer inline-flex items-center px-4 py-2', disabled ? 'text-gray-400  cursor-not-allowed': 'hover:text-blue-600']">
                     <ShoppingCartIcon class="w-5 mr-3" />
                     <span class="">Vaciar lista</span>
                 </li>
