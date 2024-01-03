@@ -1,13 +1,13 @@
 <template>
   <header class="bg-white border-b">
-    <nav class="flex items-center justify-between p-6 mx-auto max-w-7xl" aria-label="Global">
+    <nav class="flex items-center justify-between px-6 py-3 mx-auto sm:py-6 max-w-7xl" aria-label="Global">
       <div class="flex lg:flex-1">
         <a href="" class="-m-1.5 p-1.5 flex items-center">
           <img class="flex sm:hidden" width="42" height="42" src="@/assets/logo.png" />
           <h2 class="hidden text-3xl font-bold tracking-tight text-gray-900 truncate sm:flex">ShopeeMe</h2>
         </a>
       </div>
-      <div class="flex lg:hidden">
+      <div class="flex sm:hidden">
         <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700" @click="mobileMenuOpen = true">
           <span class="sr-only">Open main menu</span>
           <Bars3Icon class="w-6 h-6" aria-hidden="true" />
@@ -23,7 +23,7 @@
     </nav>
     <div :class="['lg:hidden', { hidden: !mobileMenuOpen }]" @close="mobileMenuOpen = false">
       <div class="fixed inset-0 z-10" />
-      <div class="fixed inset-y-0 right-0 z-10 w-full px-6 py-6 overflow-y-auto bg-white sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+      <div class="fixed inset-y-0 right-0 z-10 w-full px-6 py-3 overflow-y-auto bg-white sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
         <div class="flex items-center justify-between">
           <a href="#" class="-m-1.5 p-1.5">
             <img width="42" height="42" src="@/assets/logo.png" />
