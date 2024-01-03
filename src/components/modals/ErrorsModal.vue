@@ -4,20 +4,18 @@
             <div class="flex flex-col p-5 bg-white rounded-lg shadow">
                 <div class="flex">
                     <div>
-                        <ExclamationCircleIcon class="w-6 text-blue-500" />
+                        <ExclamationTriangleIcon class="w-6 text-red-500" />
                     </div>
-                    
                     <div class="ml-3">
-                        <h2 class="font-semibold text-gray-800">{{ title }}</h2>
-                        <p class="mt-2 text-sm leading-relaxed text-gray-600">{{ content }}</p>
+                        <h2 class="font-semibold text-gray-800">Error</h2>
+                        <ul class="mt-2 text-sm leading-relaxed text-gray-600">
+                            <li class="list-disc" v-for="(error, index) in errors" :key="index">
+                                {{ error }}
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                
                 <div class="flex items-center justify-end mt-3">
-                    <button @click="cancelAction" class="px-4 py-2 text-sm font-medium text-gray-800 bg-gray-100 rounded-md hover:bg-gray-200">
-                        Cancelar
-                    </button>
-                    
                     <button @click="acceptAction" class="px-4 py-2 ml-2 text-sm font-medium text-white bg-blue-500 rounded-md hover:bg-blue-600">
                         Aceptar
                     </button>
@@ -28,20 +26,15 @@
 </template>
   
 <script setup>
-import { defineProps, defineEmits } from 'vue';
-import { ExclamationCircleIcon } from '@heroicons/vue/24/outline'
+import { defineProps, defineEmits } from 'vue'
+import { ExclamationTriangleIcon } from '@heroicons/vue/24/outline'
 
-const emit = defineEmits(['cancel', 'confirm'])
+const emit = defineEmits(['confirm'])
 
 defineProps({
-    title: String,
-    content: String,
+    errors: Array,
     open: Boolean
 })
-
-const cancelAction = () => {
-    emit('cancel')
-}
 
 const acceptAction = () => {
     emit('confirm')
