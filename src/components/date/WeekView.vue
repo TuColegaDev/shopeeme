@@ -17,10 +17,10 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref } from 'vue'
 
-const currentDate = new Date();
-const startDate = new Date(currentDate.getFullYear(), 0, 1);
+const currentDate = new Date()
+const startDate = new Date(currentDate.getFullYear(), 0, 1)
 const days = Math.floor((currentDate - startDate) / (24 * 60 * 60 * 1000))
 
 const firstWeekDay = currentDate.getDate() - currentDate.getDay()
@@ -42,5 +42,5 @@ const dateItems = ref([
     }
 ])
 
-const weekNumber = ref(Math.ceil(days / 7));
+const weekNumber = ref(Math.ceil(days / 7))
 </script>
